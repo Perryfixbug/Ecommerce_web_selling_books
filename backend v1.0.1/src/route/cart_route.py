@@ -4,11 +4,8 @@ cart_route = Blueprint('cart_route', __name__)
 
 @cart_route.route('/cart', methods=['GET', 'POST', 'DELETE'])
 def Cartpage():
-    if request.method == 'GET':
-        return current_app.config['cartOption'].get_Cart()
-    if request.method == 'POST':
-        return current_app.config['cartOption'].add_Cart()
-    
+    return current_app.config['cartOption'].get_Cart()
+
 @cart_route.route('/cart/<product_id>', methods=['GET', 'POST', 'DELETE'])
 def cart(product_id=None):
     if request.method == 'GET':

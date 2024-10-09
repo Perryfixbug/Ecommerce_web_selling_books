@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from cart_option import CartOption
 from user_option import User_option 
-from product import Prod 
+from product_option import Prod
 
 from db import db
 from route.home import home
@@ -15,8 +15,6 @@ from os import path
 
 def create_app():
     app = Flask(__name__)
-    
-    # app.config['SQLALCHEMY_DATABASE_URI'] ='mysql+pymysql://root:0123456789@localhost/sce_db?charset=utf8mb4'
     app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///user.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
